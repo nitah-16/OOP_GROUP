@@ -24,6 +24,14 @@ class DataBundle:
             return False
         self.remaining = self.remaining - amount
         return True
+        
+### Extension 2: A friend shares data 
+    def add_data(self, amount):
+        """Add shared data if the amount is positive."""
+        if amount <= 0:
+            return False
+        self.remaining = self.remaining + amount
+        return True
 
 
 # ACT 2: Every entertainment option answers the same two questions.
@@ -154,3 +162,4 @@ def available(options, megabytes):
 if __name__ == "__main__":
     main()
 
+  
