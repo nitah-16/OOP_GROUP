@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./stories/01_rolex_rescue"
+    ]
+}
