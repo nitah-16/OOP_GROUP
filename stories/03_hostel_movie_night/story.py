@@ -60,6 +60,13 @@ class DataSaverMovie(StreamedMovie):  # Three levels: multilevel inheritance.
         return super().data_cost() // 2  # Extend, rather than duplicate, pricing.
 
 
+class TinyMovie(DataSaverMovie):
+    """A data-saver movie that uses half its parent's data cost."""
+
+    def data_cost(self):
+        return super().data_cost() // 2
+
+
 # ACT 3: The mixin adds presentation without becoming the whole movie.
 class HypeMixin:
     def describe(self):
