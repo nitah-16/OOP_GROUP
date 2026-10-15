@@ -133,6 +133,18 @@ def main():
         print(parent.__name__)
     print("Ending: the stories are dramatic; the data balance is peaceful.")
 
+def available(options, megabytes):
+    """
+    Returns a list of options whose data_cost() fits within the given megabytes.
+    Does not play them or change the options.
+    """
+    matching_options = []
+    for option in options:
+        # Check if the option has a data_cost method and if it fits within the budget
+        if hasattr(option, "data_cost") and option.data_cost() <= megabytes:
+            matching_options.append(option)
+    return matching_options
 
 if __name__ == "__main__":
     main()
+
