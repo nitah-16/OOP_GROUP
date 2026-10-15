@@ -63,9 +63,22 @@ class MusicSession(Entertainment):  # Sibling: hierarchical inheritance.
         return 100
 
 
+class ComedyClip(Entertainment): # Single inheritance: IS-A Entertainment.
+    def data_cost(self):
+        return 50
+
+
+
 class DataSaverMovie(StreamedMovie):  # Three levels: multilevel inheritance.
     def data_cost(self):
         return super().data_cost() // 2  # Extend, rather than duplicate, pricing.
+
+
+class TinyMovie(DataSaverMovie):
+    """A data-saver movie that uses half its parent's data cost."""
+
+    def data_cost(self):
+        return super().data_cost() // 2
 
 
 # ACT 3: The mixin adds presentation without becoming the whole movie.
@@ -134,6 +147,17 @@ def main():
         print(parent.__name__)
     print("Ending: the stories are dramatic; the data balance is peaceful.")
 
+def available(options, megabytes):
+    """
+    Returns a list of options whose data_cost() fits within the given megabytes.
+    Does not play them or change the options.
+    """
+    matching_options = []
+    for option in options:
+        # Check if the option has a data_cost method and if it fits within the budget
+        if hasattr(option, "data_cost") and option.data_cost() <= megabytes:
+            matching_options.append(option)
+    return matching_options
 
 if __name__ == "__main__":
     main()
