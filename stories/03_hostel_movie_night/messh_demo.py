@@ -30,4 +30,3 @@ print(f"Expected result: {expected_result}")
 print(f"Actual result:   {actual_result}")
 print("Expected data left: 1 MB")
 print(f"Actual data left:   {boundary_night.bundle.remaining} MB")
-                                                                    
