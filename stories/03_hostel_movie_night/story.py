@@ -60,13 +60,6 @@ class DataSaverMovie(StreamedMovie):  # Three levels: multilevel inheritance.
         return super().data_cost() // 2  # Extend, rather than duplicate, pricing.
 
 
-class TinyMovie(DataSaverMovie):
-    """A data-saver movie that uses half its parent's data cost."""
-
-    def data_cost(self):
-        return super().data_cost() // 2
-
-
 # ACT 3: The mixin adds presentation without becoming the whole movie.
 class HypeMixin:
     def describe(self):
@@ -85,6 +78,15 @@ class StorytellingCircle:  # Unrelated class with the expected methods.
 
     def describe(self):
         return "Storytelling circle: zero MB, unlimited plot twists."
+    
+class BoardGame:
+        title = "Ludo"
+
+        def data_cost(self):
+            return 0
+
+        def describe(self):
+            return "Ludo: zero MB, just a board,dice and loud arguments about who cheated."
 
 
 # ACT 4: MovieNight HAS-A bundle; it is not a kind of bundle.
