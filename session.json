@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "host": "Faith",
+      "remaining": 150
+    },
+    {
+      "host": "David",
+      "remaining": 100
+    }
+  ],
+  "resources": [
+    {
+      "type": "StreamedMovie",
+      "title": "Mukono Mystery",
+      "megabytes": 700
+    },
+    {
+      "type": "MusicSession",
+      "title": "Afrobeats break"
+    },
+    {
+      "type": "FeaturedMovie",
+      "title": "Mukono Mystery: data saver",
+      "megabytes": 700
+    },
+    {
+      "type": "BoardGame",
+      "title": "Ludo"
+    }
+  ],
+  "history": [
+    {
+      "host": "Faith",
+      "activity": {
+        "type": "FeaturedMovie",
+        "title": "Mukono Mystery: data saver",
+        "megabytes": 700
+      }
+    },
+    {
+      "host": "David",
+      "activity": {
+        "type": "MusicSession",
+        "title": "Afrobeats break"
+      }
+    }
+  ]
+}
